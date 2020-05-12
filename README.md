@@ -54,5 +54,6 @@ Then try to subscribe to your lists using that email address.
 ## Version history ##
 
     version        Description
+    2.0.2+20200512 Allow plugin to be enabled only when captcha plugin is not enabled
     2.0.1+20161014 Added dependencies
     2013-11-03     Initial version for phplist 3
