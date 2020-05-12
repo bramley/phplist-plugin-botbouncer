@@ -48,12 +48,13 @@ On the Settings page you can specify:
 
 ### Test that it works ###
 
-Go to <a href="http://www.stopforumspam.com/" target="_blank">Stop Forum Spam</a> and select an email address from the Hot Spam list.
-Then try to subscribe to your lists using that email address.
+Go to <a href="https://www.stopforumspam.com/stats#datatable" target="_blank">Stop Forum Spam</a> and select an email
+address from the Last 500 entries. Then try to subscribe to your lists using that email address.
 
 ## Version history ##
 
     version        Description
+    2.0.4+20200512 Update link to Stop Forum Spam
     2.0.3+20200512 Belatedly update the botbouncer class
     2.0.2+20200512 Allow plugin to be enabled only when captcha plugin is not enabled
     2.0.1+20161014 Added dependencies
