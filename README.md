@@ -4,9 +4,11 @@
 
 The plugin checks subscription emails for spam using the Botbouncer class <https://github.com/michield/botbouncer>.
 It currently uses only the Stop Forum Spam service to check email addresses, as that can be used without registering.
-The other services supported by Botbouncer (Akismet, Project Honeypot, and Mollom) could be added if Stop Forum Spam 
+The other services supported by Botbouncer (Akismet, Project Honeypot, and Mollom) could be added if Stop Forum Spam
 proves not to be sufficient.
 
+If you have already installed the CAPTCHA plugin then you do not need this plugin because that plugin already includes
+this functionality.
 
 ## Installation ##
 
@@ -21,7 +23,7 @@ The benefit of this is that plugins will not be affected when you upgrade phplis
 ### Install through phplist ###
 Install on the Plugins page (menu Config > Plugins) using the package URL `https://github.com/bramley/phplist-plugin-botbouncer/archive/master.zip`.
 
-In phplist releases 3.0.5 and earlier there is a bug that can cause a plugin to be incompletely installed on some configurations (<https://mantis.phplist.com/view.php?id=16865>). 
+In phplist releases 3.0.5 and earlier there is a bug that can cause a plugin to be incompletely installed on some configurations (<https://mantis.phplist.com/view.php?id=16865>).
 Check that these files are in the plugin directory. If not then you will need to install manually. The bug has been fixed in release 3.0.6.
 
 * the file BotBouncerPlugin.php
@@ -36,7 +38,7 @@ This should contain
 * the file BotBouncerPlugin.php
 * the directory BotBouncerPlugin
 
-###Settings###
+### Settings ###
 
 On the Settings page you can specify:
 
@@ -44,10 +46,10 @@ On the Settings page you can specify:
 * Whether to write a record to the event log for each failed subscription attempt
 * Whether to send an email to the admin for each failed subscription attempt
 
-###Test that it works###
+### Test that it works ###
 
 Go to <a href="http://www.stopforumspam.com/" target="_blank">Stop Forum Spam</a> and select an email address from the Hot Spam list.
-Then try to subscribe to your lists using that email address. 
+Then try to subscribe to your lists using that email address.
 
 ## Version history ##
 

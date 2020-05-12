@@ -1,9 +1,9 @@
 <?php
 /**
  * BotBouncerPlugin for phplist
- * 
+ *
  * This file is a part of BotBouncerPlugin.
- * 
+ *
  * @category  phplist
  * @package   BotBouncerPlugin
  * @author    Duncan Cameron
@@ -76,8 +76,11 @@ END;
      */
     public function dependencyCheck()
     {
+
         return array(
             'curl extension installed' => extension_loaded('curl'),
+            'CAPTCHA Plugin must not also be installed' => !phpListPlugin::isEnabled('CaptchaPlugin'),
+
         );
     }
 
@@ -85,7 +88,7 @@ END;
     {
         global $tmpdir;
 
-        include $this->coderoot . 'botbouncer.php';
+        require_once $this->coderoot . 'botbouncer.php';
 
         if (!isset($_POST["email"]))
             return '';
