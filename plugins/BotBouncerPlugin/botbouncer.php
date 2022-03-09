@@ -694,22 +694,22 @@ class Botbouncer {
 
     $cached = $this->getCache('SFS'.$apiRequest);
     if (!$cached) {
-      $cUrl = $this->stopSpamAPIUrl.'?'.$apiRequest.'&unix';
+      $cUrl = $this->stopSpamAPIUrl.'?'.$apiRequest.'&unix&json';
       $this->addLogEntry('sfs-apicall.log',$cUrl);
-      $xml = $this->doGET($cUrl);
+      $json = $this->doGET($cUrl);
 
-      if (!$xml) {
-        $this->addLogEntry('sfs-apicall.log','FAIL ON XML');
+      if (!$json) {
+        $this->addLogEntry('sfs-apicall.log','FAIL ON JSON');
         return false;
       }
-      $this->setCache('SFS'.$apiRequest,$xml);
+      $this->setCache('SFS'.$apiRequest,$json);
       $cached = ''; // for logging
     } else {
-      $xml = $cached;
+      $json = $cached;
       $cached = '(cached)'; // for logging
     }
-    ## the resulting XML is an
-    $response = simplexml_load_string($xml);
+    ## the resulting JSON is an
+    $response = json_decode($json);
 
   #  var_dump($response);exit;
     $spamMatched = array();
