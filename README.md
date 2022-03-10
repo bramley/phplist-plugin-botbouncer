@@ -54,6 +54,7 @@ address from the Last 500 entries. Then try to subscribe to your lists using tha
 ## Version history ##
 
     version        Description
+    2.0.6+20220310 Restore the unix query parameter to the stopforumspam URL
     2.0.5+20220310 Ensure that the response from stopforumspam is serialised as expected. Closes #1
     2.0.4+20200512 Update link to Stop Forum Spam
     2.0.3+20200512 Belatedly update the botbouncer class

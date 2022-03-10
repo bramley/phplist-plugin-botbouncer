@@ -1,3 +1,6 @@
+version 2.0.6+20220310
+      Restore the unix query parameter to the stopforumspam URL
+
 version 2.0.5+20220310
       Ensure that the response from stopforumspam is serialised as expected. Closes #1
 
