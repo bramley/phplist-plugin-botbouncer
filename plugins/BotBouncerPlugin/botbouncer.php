@@ -55,6 +55,7 @@ class Botbouncer {
 
   /** var LE - line ending */
   private $LE = "\n";
+  private $sfsEnabled = true;
   private $honeyPotApiKey = '';
   private $akismetApiKey = '';
   private $akismetBlogURL = 'http://www.yoursite.com';
@@ -184,6 +185,9 @@ class Botbouncer {
     }
     if (isset($GLOBALS['ForumSpamBanTriggers'])) {
       $this->spamTriggers = $GLOBALS['ForumSpamBanTriggers'];
+    }
+    if (isset($GLOBALS['sfsEnabled'])) {
+      $this->sfsEnabled = (bool) $GLOBALS['sfsEnabled'];
     }
 
     if (isset($GLOBALS['memCachedServer']) && class_exists('Memcached', false)) {
@@ -817,7 +821,7 @@ class Botbouncer {
         $this->addLogEntry('munin-graph.log','HPHAM');
       }
     }
-    if ((!$isSpam || $checkAll)) {
+    if ((!$isSpam || $checkAll) && $this->sfsEnabled) {
       $num = $this->stopForumSpamCheck($data);
       if ($num) {
         $this->matchedBy = 'Stop Forum Spam';
