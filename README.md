@@ -61,6 +61,8 @@ In your config.php, you can set the following globals:
 * ~$mollomPublicKey~
 * $ipIntelContact - IP Intel requires an admin contact e-mail address (but no registration)
 * $sfsEnabled - set false to disable Stop Forum Spam check
+* $botBouncerProtectASubscribe - set false to disable checking on asubscribe (ajax).  Defaults to true (protect).
+* $botBouncerProtectSubscribe - set false to disable checking on subscribe (non-ajax / normal page).  Defaults to true (protect).
 
 ### Test that it works ###
 
