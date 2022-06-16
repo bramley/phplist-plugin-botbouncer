@@ -152,10 +152,11 @@ class Botbouncer {
    * @param string $hpKey - API key for Honeypot Project
    * @param string $akismetKey - API key for Akismet service
    * @param string $akismetUrl - BlogURL for Akismet service
+   * @param string $ipIntelContact - Contact email for IP Intel
    *
    */
 
-  public function __construct($hpKey = '',$akismetKey = '',$akismetUrl = '', $mollomPrivateKey = '',$mollomPublicKey = '') {
+  public function __construct($hpKey = '',$akismetKey = '',$akismetUrl = '', $mollomPrivateKey = '',$mollomPublicKey = '', $ipIntelContact = '') {
     if (!function_exists('curl_init')) {
       print 'curl dependency error';
       return;
