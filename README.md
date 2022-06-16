@@ -3,12 +3,16 @@
 ## Description ##
 
 The plugin checks subscription emails for spam using the Botbouncer class <https://github.com/michield/botbouncer>.
-It currently uses only the Stop Forum Spam service to check email addresses, as that can be used without registering.
-The other services supported by Botbouncer (Akismet, Project Honeypot, and Mollom) could be added if Stop Forum Spam
-proves not to be sufficient.
+
+It currently supports any combination of the following services:
+* Stop Forum Spam (no registration required, enabled by default)
+* Akismet
+* Project Honeypot
+* ~Mollom~ (service ended)
+* IP Intel
 
 If you have already installed the CAPTCHA plugin then you do not need this plugin because that plugin already includes
-this functionality.
+(most of) this functionality.
 
 ## Installation ##
 
@@ -45,6 +49,18 @@ On the Settings page you can specify:
 * The message to be displayed to the subscriber when the subscription attempt is rejected
 * Whether to write a record to the event log for each failed subscription attempt
 * Whether to send an email to the admin for each failed subscription attempt
+
+In your config.php, you can set the following globals:
+
+* $honeyPotApiKey - Set to API key to enable Project Honey Pot
+* $akismetApiKey
+* $akismetBlogURL
+* $logRoot - Output various logs into this folder
+* $memCachedServer - Reduce duplicate API lookups by caching results with memcached
+* ~$mollomPrivateKey~
+* ~$mollomPublicKey~
+* $ipIntelContact - IP Intel requires an admin contact e-mail address (but no registration)
+* $sfsEnabled - set false to disable Stop Forum Spam check
 
 ### Test that it works ###
 
