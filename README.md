@@ -4,7 +4,7 @@
 
 The plugin checks subscription emails for spam using the Botbouncer class <https://github.com/michield/botbouncer>.
 It currently uses only the Stop Forum Spam service to check email addresses, as that can be used without registering.
-The other services supported by Botbouncer (Akismet, Project Honeypot, and Mollom) could be added if Stop Forum Spam
+The other services supported by Botbouncer (Akismet, Project Honeypot, Mollom, and IP Intel) could be added if Stop Forum Spam
 proves not to be sufficient.
 
 If you have already installed the CAPTCHA plugin then you do not need this plugin because that plugin already includes
