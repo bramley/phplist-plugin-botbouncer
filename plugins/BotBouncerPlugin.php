@@ -90,6 +90,22 @@ END;
             return '';
         }
 
+        // Ability to turn off protection if configured as such
+        if ($_REQUEST['p'] == 'asubscribe') // Ajax request
+        {
+            // Don't patrol asubscribe (ajax) if botBouncerProtectASubscribe is set false in config
+            if (isset($GLOBALS["botBouncerProtectASubscribe"]) && $GLOBALS["botBouncerProtectASubscribe"] == false)
+            {
+                return '';
+            }
+        } else {
+            // Don't patrol subscribe (non-ajax) if botBouncerProtectASubscribe is set false in config
+            if (isset($GLOBALS["botBouncerProtectSubscribe"]) && $GLOBALS["botBouncerProtectSubscribe"] == false)
+            {
+                return '';
+            }
+        }
+
         $bb = new Botbouncer();
         $bb->setLogRoot($tmpdir);
         $params = array(
