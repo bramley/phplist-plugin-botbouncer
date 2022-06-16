@@ -46,6 +46,20 @@ class BotBouncerPlugin extends phplistPlugin
             'allowempty' => true,
             'category' => 'Bot Bouncer',
         ),
+        'botbouncer_validate_subscribe_page' => array(
+            'description' => 'Whether to validate email address submitted on the subscribe page',
+            'type' => 'boolean',
+            'value' => '1',
+            'allowempty' => true,
+            'category' => 'Bot Bouncer',
+        ),
+        'botbouncer_validate_asubscribe_page' => array(
+            'description' => 'Whether to validate email address submitted on the asubscribe (AJAX) page',
+            'type' => 'boolean',
+            'value' => '1',
+            'allowempty' => true,
+            'category' => 'Bot Bouncer',
+        ),
     );
 
     private function sendAdminEmail($text)
@@ -87,6 +101,15 @@ END;
         require_once $this->coderoot . 'botbouncer.php';
 
         if (!isset($_POST['email'])) {
+            return '';
+        }
+
+        // Disable validation if configured as such
+        if ($_REQUEST['p'] == 'asubscribe' && !getConfig('botbouncer_validate_asubscribe_page')) {
+            return '';
+        }
+
+        if ($_REQUEST['p'] == 'subscribe' && !getConfig('botbouncer_validate_subscribe_page')) {
             return '';
         }
 
