@@ -1,3 +1,6 @@
+version 2.1.0+20220623
+      Update botbouncer class from michield/botbouncer repository, resolves #2, resolves #3
+
 version 2.0.6+20220310
       Restore the unix query parameter to the stopforumspam URL
 
