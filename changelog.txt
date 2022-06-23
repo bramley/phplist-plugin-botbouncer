@@ -1,3 +1,10 @@
+version 2.2.0+20220623
+      Revise README moving usage information to the phplist documentation site to simplify maintenance. Resolves #4
+      Add .gitignore
+
+SkyeBlep (1):
+      Use config setting to determine whether email address should be validated for subscribe and asubscribe pages. Resolves #5
+
 version 2.1.0+20220623
       Update botbouncer class from michield/botbouncer repository, resolves #2, resolves #3
 

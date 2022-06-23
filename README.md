@@ -51,6 +51,7 @@ Please raise any questions or problems in the user forum https://discuss.phplist
 ## Version history ##
 
     version        Description
+    2.2.0+20220623 Allow validation to be disabled for subscribe or asubscribe pages
     2.1.0+20220623 Update the botbouncer class. Now supports the IP Itel service.
     2.0.6+20220310 Restore the unix query parameter to the stopforumspam URL
     2.0.5+20220310 Ensure that the response from stopforumspam is serialised as expected. Closes #1
